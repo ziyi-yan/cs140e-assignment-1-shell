@@ -5,6 +5,16 @@
 #[derive(Debug, PartialOrd, PartialEq, Clone, Copy)]
 struct IntWrapper(isize);
 
+fn max<T>(lhs: T, rhs : T) -> T
+where T: PartialOrd + Copy
+{
+    if lhs > rhs {
+        lhs
+    } else {
+        rhs
+    }
+}
+
 pub fn main() {
     assert_eq!(max(1usize, 3), 3);
     assert_eq!(max(1u8, 3), 3);
