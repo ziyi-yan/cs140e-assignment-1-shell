@@ -1,0 +1,3 @@
+Q: The push method from Vec in the standard libary has no return value, but the push method from our StackVec does: it returns a Result indicating that it can fail. Why can StackVec::push() fail where Vec::push() does not?
+
+A: `StackVec` rely on a finite pre-allocated space. If the space is full, the allocation will fail.

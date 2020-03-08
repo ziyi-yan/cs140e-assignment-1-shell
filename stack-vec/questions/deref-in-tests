@@ -1,0 +1,7 @@
+Q: Read through the tests we have provided in src/tests.rs. Which tests would
+fail to compile if the Deref implementation did not exist? What about the DerefMut
+implementation? Why?
+
+A: Every tests use [] as Index or IndexMut or use .iter() will failed.
+After `StackVec` implemented `Deref` and `DerefMut`, the _deref coercion_
+happens when those operations applied to `StackVec`.
